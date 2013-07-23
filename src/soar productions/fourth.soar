@@ -1,0 +1,28 @@
+
+sp {propose*fourth
+    (state <s> ^io.input-link <il>)
+    (<il> ^init no ^planetwars <pw>)
+    (<pw> ^fleet <fl>)
+    (<pw> ^planet <pl>)
+  (<pl> ^numships_us <num_us>)
+    (<pl> ^numships_opponent <num_opp> > <num_us>)
+	 (<pl> ^productions_us <pro_us>)
+    (<pl> ^productions_opponent <pro_opp> > <pro_us>)
+	(<fl> ^number_fleets <num_fleet>)    
+    (<pw> ^attack_mode <am>)
+-->
+    (<s> ^operator <o> +)
+    (<o> ^name fourth)
+	  
+}
+
+sp {apply*fourth
+    (state <s> ^operator <o> 
+               ^io.output-link <ol>)
+               (<o> ^name fourth)
+               	
+-->
+     (<s> ^number_fleets 5)
+    (<ol> ^fourth <fourth>)
+    (<fourth> ^number_fleets 5)
+}

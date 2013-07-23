@@ -1,0 +1,21 @@
+
+sp {propose*fifth
+    (state <s> ^io.input-link <il>)
+     (<s> ^number_fleets <num_fleet>)
+    (<il> ^init no ^planetwars <pw>)
+    (<pw> ^fleet <fl>)
+  (<fl> ^myfleetsize <my_fleetsize> >= <num_fleet>)  
+-->
+    (<s> ^operator <o> )
+    (<o> ^name fifth)
+	  
+}
+
+sp {apply*fifth
+    (state <s> ^operator <o> 
+               ^io.output-link <ol>)
+               (<o> ^name fifth)
+               	
+-->
+    (<ol> ^fifth <fifth>)
+}

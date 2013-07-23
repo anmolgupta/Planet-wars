@@ -1,0 +1,28 @@
+# Look for the hello world WME on the input-link
+# If it is there, propose the stop operator
+sp {propose*stop
+    (state <s> ^io.input-link <il>)
+    (<il> ^init no ^planetwars <pw>)
+    (<pw> ^fleet <fl>)
+    (<pw> ^planet <pl>)
+    (<pw> ^attack_mode <am>)
+    (<fl> ^number_Fleets <num_fleet>)
+    (<pl> ^planet_num_ship_us <num_ships_us> ^planet_num_ship_opponent <num_ships_opp> ^productions_us <productions_us> ^productions_opponent <productions_opp>)
+ 
+-->
+    (<s> ^operator <o> +)
+    (<o> ^name stop)
+}
+
+# Apply the stop operator by creating an empty 
+# identifier on the output link. This is essentially
+# a command with no parameters.
+sp {apply*stop
+    (state <s> ^operator.name stop 
+               ^io.output-link <ol>
+               ^compare_numships <num_ships_us> > <num_ship_opp>
+               ^io.input-link.planetwars.planet <pl>)
+    (<pl> ^planet_num_ships_us <planetus>)
+-->
+    (<ol> ^stop <stop>)
+}

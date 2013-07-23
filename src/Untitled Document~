@@ -1,0 +1,23 @@
+java -jar tools/PlayGame.jar maps/map43.txt 1000 1000 log.txt "java -jar example_bots/RageBot.jar" "java -jar example_bots/ProspectorBot.jar" | java -jar tools/ShowGame.jar
+
+
+java -jar tools/PlayGame.jar maps/map43.txt 1000 1000 log.txt "java -jar example_bots/RageBot.jar" "java MyBot" | java -jar tools/ShowGame.jar
+
+
+export LD_LIBRARY_PATH=/home/anant/Desktop/AI/SoarTutorial_9.3.2-Linux_32bit/bin
+
+
+
+
+
+export SOAR_HOME=/home/anant/Desktop/AI/SoarTutorial_9.3.2-Linux_32bit/bin
+
+
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/anant/Desktop/AI/SoarTutorial_9.3.2-Linux_32bit/bin
+
+
+
+
+
+java -cp /home/anant/Desktop/AI/SoarTutorial_9.3.2-Linux_32bit/bin/java/sml.jar

@@ -1,0 +1,35 @@
+
+sp {propose*sixth
+    (state <s> ^io.input-link.planetwars.planet <pl>)
+    #(<pl> ^candidate_s <cs>)
+   # (<cs> ^score <score>)
+   # (<score> ^value <val>)
+  #  (<score> ^id <id>)
+ -->
+    (<s> ^operator <o> +)
+    (<o> ^name sixth)
+    (<pl> ^value 12)
+	(<pl> ^value 13)
+	(<pl> ^value 14)
+	(<pl> ^value 5)
+	(<pl> ^value 7)
+	(<pl> ^value 3)
+ }
+
+sp {apply*sixth
+    (state <s> ^operator <o> 
+               ^io.output-link <ol>)
+               (<o> ^name sixth)
+               
+    (<s> ^io.input-link.planetwars.planet <pl>)
+    #(<pl> ^candidate_s <cs>)
+    #(<cs> ^score  <val>)
+    (<pl> ^value <max-val>)
+    -(<pl>  ^value > <max-val>)
+              	
+-->
+   
+    (<ol> ^sixth <sixth>)
+    (<sixth> ^max-val <max-val>)
+   # (<sixth> ^id <id>)
+}
